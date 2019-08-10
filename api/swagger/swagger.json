@@ -1,0 +1,92 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "[http://haydane.local:3000/api/v1/api-docs](http://haydane.local:3000/api/v1/api-docs)",
+        "version": "1.0.0",
+        "title": "Swagger Nodejs SQL Restful API",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "apiteam@swagger.io"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "tags": [
+        {
+            "name": "temp",
+            "description": "Everything about your temp"
+        },
+        {
+            "name": "insert temp",
+            "description": "Insert into temp store"
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/temp": {
+            "get": {
+                "tags": [
+                    "temp"
+                ],
+                "summary": "get temp from the store",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "500": {
+                        "description": "Error Code"
+                    }
+                }
+            }
+        },
+        "/temp/add": {
+            "post": {
+                "tags": [
+                    "insert temp"
+                ],
+                "summary": "insert temp from the store",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in":"body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "value": {
+                                    "type": "number",
+                                    "format": "float"
+                                }
+                            }
+                        }
+
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Error Code"
+                    }
+                }
+            }
+        }
+    }                  
+}
