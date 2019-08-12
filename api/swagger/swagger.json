@@ -23,6 +23,14 @@
         {
             "name": "insert temp",
             "description": "Insert into temp store"
+        },
+        {
+            "name": "update temp",
+            "description": "update into temp store"
+        },
+        {
+            "name": "delete temp",
+            "description": "delete temp from store"
         }
     ],
     "schemes": [
@@ -79,6 +87,36 @@
                             }
                         }
 
+                    }
+                ],
+                "responses": {
+                    "500": {
+                        "description": "Error Code"
+                    }
+                }
+            } 
+        },
+        "/temp/delete/{id}": {
+            "post": {
+                "tags": [
+                    "delete temp"
+                ],
+                "summary": "delete temp from the store",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the temp that needs to be deleted",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
                     }
                 ],
                 "responses": {
